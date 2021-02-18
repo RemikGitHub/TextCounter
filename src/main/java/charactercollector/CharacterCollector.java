@@ -30,8 +30,9 @@ public class CharacterCollector {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
 
-            while ( (line = bufferedReader.readLine()) != null) {
-                characters.addAll(getCharCollectorFromString(line));
+            while ( ( line = bufferedReader.readLine() ) != null) {
+                line+="\n";
+                characters.addAll(getCharCollectorFromString(line.toString()));
             }
         }
         catch (FileNotFoundException e){

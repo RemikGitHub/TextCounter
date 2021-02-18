@@ -26,7 +26,8 @@ public class Main {
         System.out.println("Write text to count:");
         List<Character> charactersFromConsole = CharacterCollector.getCharacterListFromConsole();
 
-        System.out.println(charCounter.countChars(charactersFromConsole));
+        System.out.println("Number of chars: " + charCounter.countChars(charactersFromConsole));
+        System.out.println("Number of words: " + charCounter.countWords(charactersFromConsole));
     }
 
     private static void charsFromFile(){
@@ -35,8 +36,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String file = scanner.nextLine();
 
+
         List<Character> charactersFromFile = CharacterCollector.getCharacterListFromFile(file);
 
-        System.out.println(charCounter.countChars(charactersFromFile));
+        System.out.println("Number of chars: " + charCounter.countChars(charactersFromFile));
+        System.out.println("Number of words: " + charCounter.countWords(charactersFromFile));
     }
 }
