@@ -18,7 +18,7 @@ public class CharacterCollector {
 
         String str = scanner.nextLine();
 
-        return getCharCollectorFromString(str);
+        return getCharListFromString(str);
 
     }
 
@@ -32,7 +32,7 @@ public class CharacterCollector {
 
             while ( ( line = bufferedReader.readLine() ) != null) {
                 line+="\n";
-                characters.addAll(getCharCollectorFromString(line.toString()));
+                characters.addAll(getCharListFromString(line));
             }
         }
         catch (FileNotFoundException e){
@@ -44,7 +44,7 @@ public class CharacterCollector {
         return characters;
     }
 
-    public static List<Character> getCharCollectorFromString(String str){
+    public static List<Character> getCharListFromString(String str){
 
         return str
                 .chars()
