@@ -3,12 +3,40 @@ package main;
 import charactercollector.CharacterCollector;
 import charcounter.CharCounter;
 
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
+
+    private static CharCounter charCounter;
+
     public static void main(String[] args) {
 
-        System.out.println("Write text to count:");
-        CharCounter charCounter = new CharCounter();
-        System.out.println(charCounter.countChars(CharacterCollector.getTxtFromConsole()));
+        charCounter = new CharCounter();
 
+        charsFromConsole();
+
+        charCounter.resetCounter();
+
+        charsFromFile();
+
+    }
+
+    private static void charsFromConsole(){
+        System.out.println("Write text to count:");
+        List<Character> charactersFromConsole = CharacterCollector.getCharacterListFromConsole();
+
+        System.out.println(charCounter.countChars(charactersFromConsole));
+    }
+
+    private static void charsFromFile(){
+        System.out.println("Write file to count:");
+
+        Scanner scanner = new Scanner(System.in);
+        String file = scanner.nextLine();
+
+        List<Character> charactersFromFile = CharacterCollector.getCharacterListFromFile(file);
+
+        System.out.println(charCounter.countChars(charactersFromFile));
     }
 }

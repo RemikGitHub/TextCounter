@@ -14,4 +14,8 @@ public class CharCounter {
 
         return numberOfChars;
     }
+
+    public void resetCounter(){
+        numberOfChars = 0;
+    }
 }
