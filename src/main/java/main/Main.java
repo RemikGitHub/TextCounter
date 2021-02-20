@@ -28,6 +28,8 @@ public class Main {
 
         System.out.println("Number of chars: " + charCounter.countChars(charactersFromConsole));
         System.out.println("Number of words: " + charCounter.countWords(charactersFromConsole));
+        System.out.println("Number of vowels: " + charCounter.countVowels(charactersFromConsole));
+        System.out.println("Number of consonants: " + charCounter.countConsonants(charactersFromConsole));
     }
 
     private static void charsFromFile(){

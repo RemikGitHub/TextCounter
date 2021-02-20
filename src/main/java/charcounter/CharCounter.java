@@ -5,6 +5,8 @@ import java.util.List;
 public class CharCounter {
     private long numberOfChars;
     private long numberOfWords;
+    private long numberOfVowels;
+    private long numberOfConsonants;
 
     public long countChars(List<Character> characters){
 
@@ -40,6 +42,40 @@ public class CharCounter {
         }
 
         return numberOfWords;
+    }
+
+    public long countVowels(List<Character> characters) {
+
+        characters
+                .forEach(character -> {
+                    if ( isVowel(character) ) ++numberOfVowels;
+                });
+
+        return numberOfVowels;
+    }
+
+    public long countConsonants(List<Character> characters) {
+
+        characters
+                .forEach(character -> {
+                    if (  Character.isLetter(character) && !isVowel(character) ) ++numberOfConsonants;
+                });
+
+        return numberOfConsonants;
+    }
+
+    public boolean isVowel(Character character){
+        switch (Character.toLowerCase(character)){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'y':
+                return true;
+            default:
+                return false;
+        }
     }
 
     public void resetCounter(){
